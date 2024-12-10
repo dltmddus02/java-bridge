@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BridgeGame {
-    BridgeNumberGenerator bridgeNumberGenerator = new BridgeRandomNumberGenerator();
-    BridgeMaker bridgeMaker;
-    List<String> bridges;
-    UpDownBridge upDownBridge;
-    GameResult gameResult;
+    private final BridgeNumberGenerator bridgeNumberGenerator = new BridgeRandomNumberGenerator();
+    private final BridgeMaker bridgeMaker;
+    private List<String> bridges;
+    private UpDownBridge upDownBridge;
+    private final GameResult gameResult;
 
     public BridgeGame() {
         bridgeMaker = new BridgeMaker(bridgeNumberGenerator);
@@ -40,11 +40,7 @@ public class BridgeGame {
         }
     }
 
-    /**
-     * 사용자가 칸을 이동할 때 사용하는 메서드
-     */
     public void move() {
-//        List<String> userBridges = new ArrayList<>();
         upDownBridge = new UpDownBridge(bridges);
         while (true) {
             try {
@@ -67,9 +63,6 @@ public class BridgeGame {
         }
     }
 
-    /**
-     * 사용자가 게임을 다시 시도할 때 사용하는 메서드
-     */
     public void retry() {
         while (true) {
             try {
